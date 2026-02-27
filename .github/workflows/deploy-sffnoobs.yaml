@@ -31,6 +31,11 @@ jobs:
           echo "[INFO] Diff generated"
       - name: 'Deploy to Salesforce'
         run: |
-          echo "${{ secrets.JWT_SERVER_KEY }}" > server.key
-          sf org login jwt --username ${{ secrets.DEPLOYMENT_USER_NAME }} --jwt-key-file server.key --client-id ${{ secrets.CONSUMER_KEY }} --instance-url ${{ vars.INSTANCE_URL }} --set-default
+          # Write the multi-line private key reliably into a file
+          cat > server.key <<'EOF'
+${{ secrets.JWT_SERVER_KEY }}
+EOF
+          chmod 600 server.key
+          # Use quoted variables to avoid word-splitting issues
+          sf org login jwt --username "${{ secrets.DEPLOYMENT_USER_NAME }}" --jwt-key-file server.key --client-id "${{ secrets.CONSUMER_KEY }}" --instance-url "${{ vars.INSTANCE_URL }}" --set-default
           sf project deploy start --source-dir changed-sources/force-app --test-level RunLocalTests
