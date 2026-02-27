@@ -1,0 +1,68 @@
+<template>
+    <lightning-card title="Leads Test">
+
+        <div class="slds-p-horizontal_small slds-p-bottom_small">
+
+            <div class="slds-grid slds-gutters">
+
+                <!-- Search by Name -->
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input
+                        label="Search by Name"
+                        type="text"
+                        onchange={handleNameChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Lead Source Picklist -->
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-combobox
+                        label="Lead Source"
+                        value={leadSource}
+                        options={leadSourceOptions}
+                        onchange={handleLeadSourceChange}
+                        placeholder="Select Lead Source">
+                    </lightning-combobox>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Data Table -->
+        <lightning-datatable
+            key-field="Id"
+            data={display}
+            columns={columns}
+            hide-checkbox-column>
+        </lightning-datatable>
+
+        <!-- Pagination & Sync Buttons -->
+        <div class="slds-m-top_medium slds-p-horizontal_small">
+            <lightning-button 
+                variant="brand" 
+                label="Previous" 
+                onclick={handlePrevious}
+                disabled={isSyncing}
+                class="slds-m-right_small">
+            </lightning-button>
+            
+            <lightning-button 
+                variant="brand" 
+                label="Next" 
+                onclick={handleNext}
+                disabled={isSyncing}
+                class="slds-m-right_small">
+            </lightning-button>
+            
+           <lightning-button
+                variant="success"
+                label={syncButtonLabel}
+                onclick={handleOAuthConnect}
+                disabled={isSyncing}
+                class="slds-m-left_large">
+            </lightning-button>
+        </div>
+
+    </lightning-card>
+</template>
