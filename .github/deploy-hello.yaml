@@ -1,4 +1,4 @@
-name: Deploy to Hello environment on push to main
+name: Deploy to Hello environment on push to main 
 
 on:
   push:
