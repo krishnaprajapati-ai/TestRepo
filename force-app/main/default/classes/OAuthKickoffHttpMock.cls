@@ -9,7 +9,7 @@ public class OAuthKickoffHttpMock implements HttpCalloutMock {
         this.responseBody = responseBody;
     }
 
-    public HTTPResponse respond(HTTPRequest req) {
+    public HTTPResponse respond(HTTPRequest req) { 
         HttpResponse res = new HttpResponse();
         res.setStatusCode(this.statusCode);
         res.setHeader('Content-Type', 'application/json');
