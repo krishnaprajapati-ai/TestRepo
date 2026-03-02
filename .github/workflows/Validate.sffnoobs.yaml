@@ -43,7 +43,7 @@ jobs:
           chmod 600 server.key
 
           # Authenticate to UAT org
-          sf org login jwt --username "${{ secrets.DEPLOYMENT_USER_NAME }}" --jwt-key-file server.key --client-id "${{ secrets.CONSUMER_KEY }}" --instance-url "${{ vars.INSTANCE_URL }}" --set-default
+          sf org login jwt --username "${{ secrets.DEPLOYMENT_USER_NAME_UAT }}" --jwt-key-file server.key --client-id "${{ secrets.CONSUMER_KEY_UAT }}" --instance-url "${{ vars.INSTANCE_URL_UAT }}" --set-default
 
           # Validate only (--dry-run prevents actual deployment)
           sf project deploy start --source-dir changed-sources/force-app --test-level RunLocalTests --dry-run
