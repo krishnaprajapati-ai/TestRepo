@@ -4,7 +4,7 @@ on:
   push:
     branches: [ UAT ]
     paths:
-      - 'force-app/**'
+      - 'force-app/**' 
     
 jobs:
   deploy:

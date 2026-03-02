@@ -1,6 +1,6 @@
 name: Validate on push to UAT
 
-on:
+on: 
   pull_request:
     branches: [ UAT ]
     paths:
