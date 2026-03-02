@@ -4,7 +4,7 @@ public with sharing class ContactDataTableControllers {
     public static List<Lead> getAccounts(String searchName, String leadSourceName) {
         
         // Case 1: searchName AND leadSource provided
-        if (!String.isBlank(searchName) && !String.isBlank(leadSourceName)) {
+        if (!String.isBlank(searchName) && !String.isBlank(leadSourceName)) { 
             List<Lead> leadList = new List<Lead>();
             leadList = [SELECT Id, Name, Status, Phone, LeadSource
                         FROM Lead

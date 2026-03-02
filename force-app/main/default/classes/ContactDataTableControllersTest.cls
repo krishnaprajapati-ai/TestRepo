@@ -3,7 +3,7 @@ private class ContactDataTableControllersTest {
 
     @TestSetup
     static void setupTestData() {
-        List<Lead> leads = new List<Lead>();
+        List<Lead> leads = new List<Lead>(); 
 
         leads.add(new Lead(
             FirstName = 'John',
