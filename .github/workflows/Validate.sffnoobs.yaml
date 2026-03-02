@@ -4,11 +4,7 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'force-app/**'      # start from the commit before the ones you want to fix
-      git checkout the-branch
-      git rebase -i <base‑commit>
-      
-      # in the editor mark each commit you want to change as `edit`
+      - 'force-app/**'
 
 jobs:
   validate:
