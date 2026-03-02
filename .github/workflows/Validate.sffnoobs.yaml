@@ -1,8 +1,8 @@
 name: Validate on push to UAT
 
 on:
-  push:
-    branches: [ UAT ]
+  pull_request:
+    branches: [ main ]
     paths:
       - 'force-app/**'
 

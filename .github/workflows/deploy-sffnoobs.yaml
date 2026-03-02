@@ -5,7 +5,7 @@ on:
     branches: [ UAT ]
     paths:
       - 'force-app/**'
-
+    
 jobs:
   deploy:
     runs-on: ubuntu-latest
