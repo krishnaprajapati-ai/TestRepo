@@ -175,7 +175,7 @@ export default class LeadDataTable extends LightningElement {
             })
         );
     }
-
+ 
     /* ------------------------------------
        APEX CALL    
     ------------------------------------ */
