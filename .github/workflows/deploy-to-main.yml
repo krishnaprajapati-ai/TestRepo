@@ -1,8 +1,8 @@
 name: Deploy to Main (Hello Org)
 
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    branches: [ UAT ]
     paths:
       - 'force-app/**'
 
