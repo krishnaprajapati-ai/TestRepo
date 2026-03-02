@@ -1,8 +1,8 @@
 name: Deploy to Salesforce on push to main
 
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    branches: [ UAT ]
     paths:
       - 'force-app/**'
 
