@@ -1,16 +1,21 @@
-name: Deploy to Salesforce on push to main
+name: Deploy to Salesforce
 
 on:
   push:
-    branches: [ UAT ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - UAT
     paths:
-      - 'force-app/**' 
-    
+      - 'force-app/**'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: Hello
     steps:
+      # your existing steps remain unchanged
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
