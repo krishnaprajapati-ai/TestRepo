@@ -1,6 +1,6 @@
 public with sharing class ContactDataTableControllers {
     
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled(cacheable=true) 
     public static List<Lead> getAccounts(String searchName, String leadSourceName) {
         
         // Case 1: searchName AND leadSource provided

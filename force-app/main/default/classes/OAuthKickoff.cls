@@ -1,7 +1,7 @@
 public with sharing class OAuthKickoff {
 
     @AuraEnabled
-    public static String syncLeadsToOrgB(List<String> leadIds) {
+    public static String syncLeadsToOrgB(List<String> leadIds) { 
         try {
             if(leadIds == null || leadIds.isEmpty()) {
                 throw new AuraHandledException('No leads selected to sync');
